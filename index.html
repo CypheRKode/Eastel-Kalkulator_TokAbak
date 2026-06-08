@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eastel Earnings Calculator</title>
+  <meta name="description" content="Kira potensi komisen topup Eastel berdasarkan pelan topup dan sifir jaringan." />
+  <meta name="theme-color" content="#eef7ff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a href="#calculator-section" class="nav-jump" aria-label="Pergi ke calculator">☰</a>
+
+      <a href="#top" class="brand" aria-label="Eastel Calculator">
+        <span>Eastel</span><span>Calculator</span>
+      </a>
+
+      <a
+        class="contact-btn"
+        href="https://api.whatsapp.com/send/?phone=601175947174&text=NakTahuCaraMula&type=phone_number&app_absent=0"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hubungi Saya melalui WhatsApp"
+      >
+        <img src="images/whatsapp.png" alt="" />
+        <span>Hubungi Saya</span>
+      </a>
+    </header>
+
+    <section id="top" class="hero-grid" aria-label="Eastel hero dan kalkulator">
+      <section id="calculator-section" class="glass-card calculator-shell" aria-label="Kalkulator komisen Eastel">
+        <div class="calculator-card">
+          <div class="side-stack">
+            <div class="mini-card money-card">
+              <h4>Modal nak mula cuma</h4>
+              <span class="rm10-text">RM10</span>
+              <img src="images/rm10.png" alt="Mockup RM10 dengan label CONTOH" class="rm10-img" />
+            </div>
+
+            <div class="mini-info">
+              <div class="mini-arrow">↗</div>
+              <p>
+                Berapa income anda nak, anda yang tentukan.<br>
+                Sila gunakan kalkulator.
+              </p>
+            </div>
+          </div>
+
+          <div class="main-calculator">
+            <div class="calc-head">
+              <div class="calc-icon">▦</div>
+              <div>
+                <small>Kalkulator Sifir 10</small>
+                <h2>Kira potensi komisen topup.</h2>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="l1Users">Pengguna L1</label>
+                <input type="number" id="l1Users" min="1" step="1" value="10" inputmode="numeric" />
+              </div>
+
+              <div class="field">
+                <label for="multiplier">Sifir setiap orang</label>
+                <input type="number" id="multiplier" min="1" step="1" value="10" inputmode="numeric" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Pelan topup</label>
+              <div class="plan-switcher" role="group" aria-label="Pilih pelan topup">
+                <button class="plan-btn active" data-plan="50" type="button">RM50</button>
+                <button class="plan-btn" data-plan="35" type="button">RM35</button>
+              </div>
+            </div>
+
+            <div class="result-grid">
+              <div class="result-card">
+                <span class="label">Ranking</span>
+                <span class="value" id="rankText">Senior Ambassador</span>
+              </div>
+
+              <div class="result-card">
+                <span class="label">Komisen asas</span>
+                <span class="value" id="baseCommission">RM0.00</span>
+              </div>
+            </div>
+
+            <div class="highlight-card">
+              <span class="label">Potensi komisen bulanan</span>
+              <span class="big" id="totalCommission">RM0.00</span>
+              <span class="small" id="activeLevelText">L1 hingga L13 aktif.</span>
+            </div>
+
+            <div class="unlock-bar">
+              <div class="unlock-top">
+                <span id="unlockText">L9 hingga L13 dibuka automatik.</span>
+                <span class="rank-pill" id="rankPill">SENIOR</span>
+              </div>
+
+              <div class="progress-wrap" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+            </div>
+
+            <div class="table-card">
+              <div class="table-head">
+                <h3>Pecahan level</h3>
+                <small>Papar semua</small>
+              </div>
+
+              <div class="table-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Level</th>
+                      <th>Pengguna</th>
+                      <th>Kadar</th>
+                      <th>Komisen</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="breakdownBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-card hero-shell" aria-label="Penerangan peluang Eastel">
+        <div class="hero-top">
+          <div class="hero-copy">
+            <div class="badge">✨ Zaman Berubah!</div>
+            <h1>
+              Dulu handphone lambang kemewahan,
+              sekarang ia <span>satu keperluan.</span>
+            </h1>
+            <p>
+              Paling menarik, sekarang kita berpeluang mencipta pendapatan melalui handphone
+              dengan membantu orang mendapatkan simkad dan pelan data yang mereka perlukan setiap bulan.
+            </p>
+          </div>
+
+          <div class="phone-wrap" aria-hidden="true">
+            <img src="images/phone.png" alt="" class="phone-img" />
+            <div class="emoji-bubble">😊</div>
+            <div class="ring-bubble">◎</div>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon icon-purple">▣</div>
+            <h3>Real bisnes</h3>
+            <p>Model bisnes sah, berproduk dan bernilai.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon icon-cyan">▤</div>
+            <h3>Modal kecil</h3>
+            <p>Bermula tanpa perlu modal besar.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon icon-orange">↻</div>
+            <h3>Pendapatan berulang</h3>
+            <p>Komisen berulang setiap bulan.</p>
+          </article>
+        </div>
+
+        <div class="claim-box">
+          <div class="shield">✓</div>
+
+          <div class="claim-list">
+            <span>Bukan skim cepat kaya</span>
+            <span>Bukan main duit</span>
+            <span>Bukan skim ponzi</span>
+          </div>
+
+          <div class="claim-mini-chart" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a
+            class="cta-main"
+            href="https://api.whatsapp.com/send/?phone=601175947174&text=NakTahuCaraMula&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nak Tahu Cara Mula
+            <span>→</span>
+          </a>
+
+          <a
+            class="contact-box"
+            href="https://api.whatsapp.com/send/?phone=601175947174&text=NakTahuCaraMula&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="wa-box"><img src="images/whatsapp.png" alt="" /></span>
+            <span>
+              <strong>Tok Abak</strong>
+              <b>01175947174</b>
+            </span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <section class="rank-cards" aria-label="Ringkasan ranking">
+      <article class="rank-card">
+        <div class="rank-no">1</div>
+        <h4>Elite Member</h4>
+        <p>L1 13%, L2 3%, L3 8%.</p>
+      </article>
+
+      <article class="rank-card">
+        <div class="rank-no">2</div>
+        <h4>Ambassador</h4>
+        <p>Bila komisen asas cecah RM500, L4 hingga L8 dibuka dengan kadar 1.5% setiap level.</p>
+      </article>
+
+      <article class="rank-card">
+        <div class="rank-no">3</div>
+        <h4>Senior Ambassador</h4>
+        <p>Bila komisen asas cecah RM3,500, L9 hingga L13 dibuka dengan kadar 1% setiap level.</p>
+      </article>
+    </section>
+
+    <footer>
+      © 2026 Eastel Earnings Calculator. Simulasi ini bukan jaminan pendapatan.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
