@@ -1385,32 +1385,17 @@ footer {
 
   .money-card,
   .income-card {
-    min-height: 180px;
+    min-height: 260px;
   }
 
   .money-card img {
-    width: 188px;
+    width: 200px;
     left: auto;
-    right: -34px;
-    bottom: 10px;
+    right: -12px;
+    bottom: 30px;
   }
 
   .contact-card strong {
     font-size: 20px;
-  }
-}
-/* FINAL MOBILE TWEAK - RM10 PLACEMENT */
-@media (max-width: 768px) {
-  .rm10-img {
-    width: 200px !important;
-    right: -12px !important;
-    bottom: 30px !important;
-    left: auto !important;
-    transform: rotate(-8deg) !important;
-  }
-
-  .mini-card:first-child {
-    min-height: 260px !important;
-    overflow: hidden !important;
   }
 }
