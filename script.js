@@ -54,9 +54,9 @@ function getRank(baseCommissionValue) {
 }
 
 function getRankPill(rank) {
-  if (rank === "Senior Ambassador") return "SENIOR";
+  if (rank === "Senior Ambassador") return "SENIOR AMBASSADOR";
   if (rank === "Ambassador") return "AMBASSADOR";
-  return "ELITE";
+  return "ELITE MEMBER";
 }
 
 function getProgress(baseCommissionValue) {
@@ -78,11 +78,11 @@ function getUnlockMessage(baseCommissionValue, rank) {
 
   if (rank === "Ambassador") {
     const amountNeeded = Math.max(0, 3500 - baseCommissionValue);
-    return `Perlu lagi ${formatMoney(amountNeeded)} untuk buka Senior Ambassador.`;
+    return `Perlu lagi ${formatMoney(amountNeeded)} untuk capai rank Senior Ambassador.`;
   }
 
   const amountNeeded = Math.max(0, 500 - baseCommissionValue);
-  return `Perlu lagi ${formatMoney(amountNeeded)} untuk buka Ambassador.`;
+  return `Perlu lagi ${formatMoney(amountNeeded)} untuk capai rank Ambassador.`;
 }
 
 function sanitizeInteger(value, fallback) {
