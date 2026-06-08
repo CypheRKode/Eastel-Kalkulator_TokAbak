@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eastel Earnings Calculator</title>
+  <meta name="description" content="Landing page dan kalkulator potensi komisen Eastel berdasarkan pelan topup, pengguna L1 dan sifir jaringan." />
+  <meta name="theme-color" content="#eef8ff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page" id="top">
+    <header class="topbar" aria-label="Bar utama">
+      <a href="#calculator" class="calculator-jump" aria-label="Buka kalkulator">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3Zm0 2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7Zm1 2h8v4H8V6Zm.5 7h2v2h-2v-2Zm4 0h2v2h-2v-2Zm4 0h.5v2h-.5v-2ZM8.5 17h2v2h-2v-2Zm4 0h2v2h-2v-2Zm4 0h.5v2h-.5v-2Z" />
+        </svg>
+      </a>
+
+      <a class="brand-title" href="#top" aria-label="Eastel landing page">
+        <span class="brand-name">Eastel</span>
+        <span class="brand-tagline">The Prepaid That Pays You Back</span>
+      </a>
+
+      <a class="top-contact" href="https://api.whatsapp.com/send/?phone=601175947174&text=GuideSayaUntukJanaPendapatanDenganTelco&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="Hubungi saya di WhatsApp">
+        <span class="chat-icon" aria-hidden="true"></span>
+        <span>Hubungi Saya</span>
+      </a>
+    </header>
+
+    <section class="hero-layout" aria-label="Eastel landing page dan calculator">
+      <section class="calculator-panel glass-card" id="calculator" aria-label="Kalkulator potensi komisen Eastel">
+        <div class="side-strip">
+          <div class="money-card small-card">
+            <span class="kicker">Modal nak mula cuma</span>
+            <strong>RM10</strong>
+            <img src="images/rm10.png" alt="Mockup duit RM10 dengan label CONTOH" />
+          </div>
+
+          <div class="income-card small-card">
+            <div class="round-icon">↗</div>
+            <p>Berapa income anda nak, anda yang tentukan.</p>
+            <small>Sila gunakan kalkulator.</small>
+          </div>
+        </div>
+
+        <div class="calculator-box">
+          <div class="calculator-inner">
+            <div class="calc-intro">
+              <span class="calc-badge">Kalkulator Potensi</span>
+              <div class="calc-icon-large" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 2h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3Zm1 4v4h8V6H8Zm0 7v2h2v-2H8Zm4 0v2h2v-2h-2Zm4 0v2h1v-2h-1Zm-8 4v2h2v-2H8Zm4 0v2h2v-2h-2Zm4 0v2h1v-2h-1Z" /></svg>
+              </div>
+              <h2>Jom Kita Kira Berapa Potensi Income Boleh Terhasil, Sekiranya...</h2>
+              <p>Masukkan jumlah pengguna L1 dan sifir duplikasi. Sistem akan kira potensi komisen topup mengikut level.</p>
+            </div>
+
+            <div class="calc-form">
+              <div class="input-grid">
+                <label class="field">
+                  <span>Pengguna L1</span>
+                  <input id="l1Users" type="number" min="1" step="1" value="10" inputmode="numeric" />
+                </label>
+
+                <label class="field">
+                  <span>Sifir setiap orang</span>
+                  <input id="multiplier" type="number" min="1" step="1" value="10" inputmode="numeric" />
+                </label>
+              </div>
+
+              <div class="plan-area">
+                <span class="field-label">Pelan topup</span>
+                <div class="plan-switcher" role="group" aria-label="Pilih pelan topup">
+                  <button type="button" class="plan-btn active" data-plan="50">RM50</button>
+                  <button type="button" class="plan-btn" data-plan="35">RM35</button>
+                </div>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-card">
+                  <span>Ranking</span>
+                  <strong id="rankText">Senior Ambassador</strong>
+                </div>
+                <div class="result-card">
+                  <span>Komisen asas</span>
+                  <strong id="baseCommission">RM0.00</strong>
+                </div>
+              </div>
+
+              <div class="total-card">
+                <span>Potensi komisen bulanan</span>
+                <strong id="totalCommission">RM0.00</strong>
+                <small id="activeLevelText">L1 hingga L13 aktif.</small>
+              </div>
+
+              <div class="unlock-card">
+                <div class="unlock-copy">
+                  <span id="unlockText">L9 hingga L13 dibuka automatik.</span>
+                  <strong id="rankPill">SENIOR</strong>
+                </div>
+                <div class="progress"><i id="progressFill"></i></div>
+              </div>
+
+              <details class="breakdown" open>
+                <summary>Pecahan level</summary>
+                <div class="table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Level</th>
+                        <th>Pengguna</th>
+                        <th>Kadar</th>
+                        <th>Komisen</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="breakdownBody"></tbody>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-panel glass-card" aria-label="Penerangan Eastel">
+        <div class="hero-copy">
+          <div class="headline-area">
+            <span class="wow-badge">✨ Zaman Berubah!</span>
+            <h1>Dulu handphone lambang kemewahan, sekarang ia <em>satu keperluan.</em></h1>
+            <p>Paling menarik, sekarang kita berpeluang mencipta pendapatan melalui handphone dengan membantu orang mendapatkan simkad dan pelan data yang mereka perlukan setiap bulan.</p>
+          </div>
+
+          <div class="phone-stage" aria-hidden="true">
+            <img src="images/phone.png" alt="" />
+            <span class="decor decor-a">◆</span>
+            <span class="decor decor-b">⌁</span>
+            <span class="decor decor-c">😊</span>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon purple">▣</div>
+            <div>
+              <h3>Real bisnes</h3>
+              <p>Model bisnes sah, berproduk dan bernilai.</p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon cyan">▤</div>
+            <div>
+              <h3>Modal kecil</h3>
+              <p>Bermula tanpa perlu modal besar.</p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon orange">↻</div>
+            <div>
+              <h3>Pendapatan berulang</h3>
+              <p>Komisen berulang setiap bulan.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="trust-strip">
+          <div class="shield">✓</div>
+          <div class="checks">
+            <span>Bukan skim cepat kaya</span>
+            <span>Bukan main duit</span>
+            <span>Bukan skim ponzi</span>
+          </div>
+          <div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+
+        <div class="cta-row">
+          <a class="main-cta" href="https://api.whatsapp.com/send/?phone=601175947174&text=GuideSayaUntukJanaPendapatanDenganTelco&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            Nak Tahu Cara Mula
+            <span>→</span>
+          </a>
+
+          <a class="contact-card" href="https://api.whatsapp.com/send/?phone=601175947174&text=GuideSayaUntukJanaPendapatanDenganTelco&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            <img src="images/whatsapp.png" alt="" />
+            <span><b>Tok Abak</b><strong>011 7594 7174</strong></span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <section class="rank-row" aria-label="Ringkasan ranking Eastel">
+      <article>
+        <span>1</span>
+        <h3>Elite Member</h3>
+        <p>L1 13%, L2 3%, L3 8%.</p>
+      </article>
+
+      <article>
+        <span>2</span>
+        <h3>Ambassador</h3>
+        <p>Bila komisen asas cecah RM500, L4 hingga L8 dibuka dengan kadar 1.5% setiap level.</p>
+      </article>
+
+      <article>
+        <span>3</span>
+        <h3>Senior Ambassador</h3>
+        <p>Bila komisen asas cecah RM3,500, L9 hingga L13 dibuka dengan kadar 1% setiap level.</p>
+      </article>
+    </section>
+
+    <footer>© 2026 Eastel Earnings Calculator. Simulasi ini bukan jaminan pendapatan.</footer>
+  </main>
+
+  <a class="floating-calc" href="#calculator" aria-label="Buka kalkulator">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3Zm1 4v4h8V6H8Zm0 7v2h2v-2H8Zm4 0v2h2v-2h-2Zm4 0v2h1v-2h-1Zm-8 4v2h2v-2H8Zm4 0v2h2v-2h-2Zm4 0v2h1v-2h-1Z" /></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
