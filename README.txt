@@ -1,23 +1,17 @@
-Eastel Earnings Calculator
+# Eastel Earnings Calculator
 
-Cara guna:
-1. Upload semua file dan folder ini ke GitHub repo.
-2. Pastikan struktur file kekal seperti ini:
+## Formula
 
-   index.html
-   style.css
-   script.js
-   images/rm10.png
-   images/phone.png
-   images/whatsapp.png
+- L1: 13%
+- L2: 3%
+- L3: 8%
+- Ambassador unlocked bila komisen asas L1 hingga L3 cecah RM500
+- L4 hingga L8: 1.5% setiap level
+- Senior Ambassador unlocked bila komisen asas L1 hingga L3 cecah RM3,500
+- L9 hingga L13: 1% setiap level
 
-3. Pergi ke Settings > Pages.
-4. Pilih Source: Deploy from a branch.
-5. Pilih Branch: main dan folder: /root.
-6. Save.
+Default sifir:
 
-Nota:
-- Semua CTA WhatsApp sudah diset ke nombor Tok Abak: 01175947174.
-- Link WhatsApp menggunakan phone=601175947174.
-- Gambar RM10 ialah mockup dengan label CONTOH untuk tujuan grafik web.
-- Simulasi calculator ini bukan jaminan pendapatan.
+- L1 = 10 pengguna
+- L2 = 100 pengguna
+- L3 = 1000 pengguna
