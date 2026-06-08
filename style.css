@@ -1385,14 +1385,14 @@ footer {
 
   .money-card,
   .income-card {
-    min-height: 260px;
+    min-height: 180px;
   }
 
   .money-card img {
     width: 200px;
     left: auto;
-    right: -12px;
-    bottom: 30px;
+    right: 0px;
+    bottom: 20px;
   }
 
   .contact-card strong {
