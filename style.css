@@ -1399,3 +1399,18 @@ footer {
     font-size: 20px;
   }
 }
+/* FINAL MOBILE TWEAK - RM10 PLACEMENT */
+@media (max-width: 768px) {
+  .rm10-img {
+    width: 200px !important;
+    right: -12px !important;
+    bottom: 30px !important;
+    left: auto !important;
+    transform: rotate(-8deg) !important;
+  }
+
+  .mini-card:first-child {
+    min-height: 260px !important;
+    overflow: hidden !important;
+  }
+}
